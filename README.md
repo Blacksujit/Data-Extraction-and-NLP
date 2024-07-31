@@ -1,15 +1,15 @@
 # URL Text Extraction and Analysis
 
-![Project Banner](![alt text](image.png))
+![alt text](image.png)
 
 ## Overview
 
 This project extracts text from a list of URLs and performs a detailed textual analysis to compute various linguistic and sentiment metrics. The extracted data is saved to text files, and the analysis results are compiled into an Excel file.
 
-![Demo](![alt text](https://miro.medium.com/v2/resize:fit:2000/1*zTkAXdkJZXKF6gy-QOtBYQ.gif))
+ ![alt text](https://miro.medium.com/v2/resize:fit:2000/1*zTkAXdkJZXKF6gy-QOtBYQ.gif)
 
 
-![Demo](![alt text](https://optimizeit.ai/images/solutions/process.gif))
+ ![alt text](https://optimizeit.ai/images/solutions/process.gif)
 
 ## Folder Structure:
 
@@ -33,13 +33,16 @@ url-text-extraction-analysis/
 ## Installation
 
 1. **Clone the repository**:
-   ```bash
+
+```bash
    git clone https://github.com/Blacksujit/Data-Extraction-and-NLP.git
 ```
 
-2. run script 
+2. **run script**: 
 
-    ``` Article_extrction.py 
+```
+ Article_extrction.py
+
 ```
 
 ## Install the required Python libraries:
