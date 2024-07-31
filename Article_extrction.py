@@ -9,7 +9,7 @@ from nltk.corpus import cmudict
 # Firstly we will extract the article from the text
 
 
-# Read the input file
+# Input file reading 
 input_df = pd.read_excel('F:\\internshup_blackcoffer\\Input (1).xlsx')
 
 def extract_text_from_url(url):
@@ -20,7 +20,8 @@ def extract_text_from_url(url):
     article_text = ' '.join([para.get_text() for para in paragraphs])
     return title, article_text
 
-# Loop through the URLs and extract text
+# we will iterate through url and extract the text 
+
 for index, row in input_df.iterrows():
     url_id = row['URL_ID']
     url = row['URL']
@@ -29,9 +30,11 @@ for index, row in input_df.iterrows():
         file.write(title + '\n' + article_text)
 
 
-# Download necessary NLTK data
+# Downloading the nltk data 
+
 nltk.download('punkt')
 nltk.download('cmudict')
+
 
 d = cmudict.dict()
 
@@ -43,7 +46,8 @@ def analyze_text(article_text):
     sentences = blob.sentences
     words = blob.words
     
-    # Variables
+# Variables
+    
     positive_score = sum(1 for word in words if TextBlob(word).sentiment.polarity > 0)
     negative_score = sum(1 for word in words if TextBlob(word).sentiment.polarity < 0)
     polarity_score = blob.sentiment.polarity
@@ -63,6 +67,7 @@ def analyze_text(article_text):
             syllables_per_word, personal_pronouns, avg_word_length]
 
 # Analyze the extracted text files
+
 output_data = []
 for index, row in input_df.iterrows():
     url_id = row['URL_ID']
@@ -73,9 +78,19 @@ for index, row in input_df.iterrows():
         output_data.append([url_id, row['URL'], title] + analysis_results)
 
 # Save the output data
+
 output_df = pd.DataFrame(output_data, columns=[
     'URL_ID', 'URL', 'Title', 'Positive Score', 'Negative Score', 'Polarity Score', 'Subjectivity Score',
     'Avg Sentence Length', 'Percentage Complex Words', 'Fog Index', 'Avg Words per Sentence', 
     'Complex Word Count', 'Word Count', 'Syllables per Word', 'Personal Pronouns', 'Avg Word Length'
 ])
 output_df.to_excel('Output Data Structure.xlsx', index=False)
+
+
+
+
+
+
+
+
+
