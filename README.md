@@ -33,13 +33,16 @@ url-text-extraction-analysis/
 ## Installation
 
 1. **Clone the repository**:
-   ```bash
+
+```bash
    git clone https://github.com/Blacksujit/Data-Extraction-and-NLP.git
 ```
 
-2. run script 
+2. **run script**: 
 
-    ``` Article_extrction.py 
+```
+ Article_extrction.py
+
 ```
 
 ## Install the required Python libraries:
